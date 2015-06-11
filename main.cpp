@@ -14,7 +14,7 @@ int main(int argc, char * argv){
 	vector <piloto> listaPilotos;
 	vector <propulsor> listaPro;
 	while(true){
-		cout<<"Argye Wings Inc."<<end;
+		cout<<"Argye Wings Inc."<<endl;
 
 	}
 }
