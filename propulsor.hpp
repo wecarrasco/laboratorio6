@@ -8,6 +8,8 @@ public:
 	propulsor(int potencia);
 	void generarSerie();
 	propulsor crearPropulsor(int potencia,string serie);
+	void setPotencia();
+	void getPotencia();
 private:
 	int potencia;
 	string serie;
