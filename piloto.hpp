@@ -2,6 +2,7 @@
 #define PILOTO_H
 #include <stirng>
 
+using namespace std;
 class pilotos{
 
 public:

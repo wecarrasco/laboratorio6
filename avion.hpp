@@ -10,7 +10,9 @@ public:
 	avion crearAvion(propulsor,misil,piloto);
 
 private:
-
+	propulsor propulsor;
+	misil misil;
+	piloto piloto;
 };
 
 #endif
