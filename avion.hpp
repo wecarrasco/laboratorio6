@@ -16,12 +16,8 @@ public:
 	avion(const avion&);
 	~avion();	
 	string toString()const;
-	void addPropulsor(propulsor);
-	void deletePropulsor(int);
-	void addMisil()const;
-	void deleteMisil(int);
-	void addPiloto()const;
-	void deletePiloto(int);
+	void addavion(propulsor,misil,piloto);
+	void deleteavion(int);		
 
 private:
 	propulsor propulsor;

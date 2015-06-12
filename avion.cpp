@@ -21,8 +21,9 @@ avion::avion(const avion& other):propulsor(other.propulsor), misil(other.misil),
 	}
 }
 avion::~avion(){
-	if(lista_aviones)
+	if(lista_aviones){
 		delete lista_aviones;
+	}
 }
 string avion::toString()cosnt{
 	stringstream ss;
@@ -35,24 +36,14 @@ string avion::toString()cosnt{
 		}
 	return ss.str();
 }
-void avion::addPropulsor(propulsor){
-	
+void avion::addavion(propulsor propulsor,misil misil,piloto piloto){
+	lista_aviones->push_back(avion);
 }
 
-void avion::deletePropulsor(int){
-
-}
-
-void avion::addMisil(misil){
-
-}
-
-void avion::deleteMisil(int){
-
-}
-void avion::addPiloto(){
-	lista_aviones->push_back(lista_aviones);
-}
-void avion::deletePiloto(){
-
+void avion::deleteavion(int posicion){
+	for (int i = 0; i < avion.size(); i++){
+		if(i==posicion-1){
+			delete lista_aviones[i];
+		}
+	}
 }
