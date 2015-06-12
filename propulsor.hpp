@@ -1,23 +1,27 @@
 #ifndef PROPULSOR_H
 #define PROPULSOR_H
 
+#include <vector>
 #include <string>
+
 using std :: string;
+using std :: vector;
 
 class propulsor{
 public:
-	propulsor(int potencia);
-	void generarSerie();
-	propulsor crearPropulsor(int potencia,string serie);
-	void setPotencia(int);
-	int getPotencia()const;
-	void setSerie(string);
-	string getSerie()const;
+	propulsor(int potencia, string serie);
+	propulsor(const propulsor&);
+	~propulsor();
 	string toString()const;
+	void addPotencia();
+	void deletePotencia(int);
+	void addSerie();
+	void deleteSerie();
 private:
 	int potencia;
 	string serie;
-	bool validarPotencia(int potencia);
+	bool validarPoncia(int potencia);
+	vector <propulsor>* lista_propulsores;
 };
 
 #endif
