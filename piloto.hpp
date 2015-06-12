@@ -3,10 +3,10 @@
 #include <string>
 
 using namespace std;
-class pilotos{
+class piloto{
 
 public:
-	piloto(int edad, int años_exp, string nombre);
+	piloto(int edad, int _exp, string nombre);
 	piloto(const piloto&);
 	~piloto();
 	string toString()const;
@@ -14,7 +14,7 @@ public:
 	void deletePiloto(int);
 private:
 	int edad;
-	int años_exp;
+	int _exp;
 	string nombre;
 	vector<piloto>* lista_piloto;
 };

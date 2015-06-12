@@ -6,25 +6,25 @@
 
 using namespace std;
 
-Propulsor::propulsor(int potencia, string serie){
+propulsor::propulsor(int potencia, string serie){
 	this->potencia = potencia;
 	this->serie = serie;
 	lista_propulsores = new vector<propulsor>;
 }
 
-Propulsor::propulsor(const propulsor& other):potencia(other.potencia), serie(other.serie){
+propulsor::propulsor(const propulsor& other):potencia(other.potencia), serie(other.serie){
 	lista_propulsores = new vector<propulsor>(other.lusta_propulsor->size());
 	for(int i = 0; i < other.grades->size(); i++){
 		(*lista_propulsores)[i] = (*other.lista_propulsores)[i];
 	}
 }
 
-Propulsor::~propulsor(){
+propulsor::~propulsor(){
 	if(lista_propulsores)
 		delete lista_propulsores;
 }
 
-string Propulsores::toString()const{
+string propulsor::toString()const{
 	stringstream ss;
 	ss << "Potencia: " << potencia << " Serie: " << serie;
 	if(lista_propulsores->size() != 0){

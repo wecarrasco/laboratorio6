@@ -8,7 +8,7 @@ using std :: string;
 using std :: stringstream;
 using std :: vector;
 
-Misil::Misil(double alcance, double radio){
+misil::misil(double alcance, double radio){
 	if(alcance > 0 && radio > 0 ){
 		this->alcance = alcance;
 		this->radio = radio;
@@ -18,23 +18,23 @@ Misil::Misil(double alcance, double radio){
 	lista_miles = new misil<misil>;
 }
 
-Misil::Misil(const misil& other):alcance(other.alcance), radio(other.radio){
-	lista_misiles = new vector<misiles>(other.lista_misiles->size());
+misil::misil(const misil& other):alcance(other.alcance), radio(other.radio){
+	lista_misiles = new vector<misil>(other.lista_misiles->size());
 	for(int i = 0; i<other.grades->size(); i++)
 		(*lista_misiles)[i] = (*other.lista_misiles)[i];
 }
 
-Misil::~Misil(){
+misil::~misil(){
 	if(lista_misiles){
 		delete lista_misiles;
 	}
 }
 
-string Misil::toString()const{
+string misil::toString()const{
 	stringstream ss;
 	ss << "Alcance: " << alcance << " Radio: " << radio;
 	if(lista_misiles->size() != 0){
-		for(int i = 0; i < grades->size()-1; i++){
+		for(int i = 0; i < lista_misiles->size()-1; i++){
 			ss << (*lista_misiles)[i] << " ";
 		}
 			ss << (*lista_misiles)[lista_misiles->size()-1];
