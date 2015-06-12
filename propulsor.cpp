@@ -1,32 +1,49 @@
 #include "propulsor.hpp"
+#include "avion.hpp"
+#include <sstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-propulsor(int potencia){
-	this->potencia=potencia;
-	string serie;
-
+Propulsor::propulsor(int potencia, string serie){
+	this->potencia = potencia;
+	this->serie = serie;
+	lista_propulsores = new vector<propulsor>;
 }
 
-void generarSerie(){
-}
-
-propulsor crearPropulsor(int potencia,string serie){
-	if(entra==true){
-
-	}else{
-		propulsor(0," ");
+Propulsor::propulsor(const propulsor& other):potencia(other.potencia), serie(other.serie){
+	lista_propulsores = new vector<propulsor>(other.lusta_propulsor->size());
+	for(int i = 0; i < other.grades->size(); i++){
+		(*lista_propulsores)[i] = (*other.lista_propulsores)[i];
 	}
 }
 
-void getPotencia(){
-	return potencia;
+Propulsor::~propulsor(){
+	if(lista_propulsores)
+		delete lista_propulsores;
 }
-void setPotencia(int potencia){
-	this->potencia=potencia;
-	return potencia;
+
+string Propulsores::toString()const{
+	stringstream ss;
+	ss << "Potencia: " << potencia << " Serie: " << serie;
+	if(lista_propulsores->size() != 0){
+		for(int i=0; i < lista_propulsores->size()-1; i++){
+			ss << (*lista_propulsores)[i] << " ";
+		}
+		ss << (*lista_propulsores)[lista_propulsores->size() - 1]
+	}
+	return ss.str();
 }
+void addPotencia(){
+}
+void deletePotencia(int){
+}
+void addSerie(){
+}
+void deleteSerie(int){
+}
+
 bool validarPotencia(int potencia,bool entra){
 	if(potencia<30 || potencia>50){
 		entra=true;
