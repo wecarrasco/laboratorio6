@@ -24,6 +24,29 @@ int main(int argc, char * argv){
 		cin>>opcion;
 		
 		if(opcion == 1){
+			cout << "1. Agregar Avion" << endl;
+			cout << "2. Agregar Misil" << endl;
+			cout << "3. Agregar Piloto" << endl;
+			cout << "4. Agregar Propulsor" << endl;
+			int opcion1;
+			cin >> opcion1;
+			if (opcion1 == 1)
+			{
+				
+			}else if (opcion1 == 2)
+			{
+				double alcance, radio;
+				cout << "Ingrese alcance: ";
+				cin >> alcance;
+				cout << "Ingrese radio de destruccion: ";
+				cin >> radio;
+				listaMisiles.push_back(misil(alcance, radio));
+			}else if (opcion1 == 3)
+			{
+				
+			}else{
+
+			}
 		}
 		if(opcion == 2){
 		}
