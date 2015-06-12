@@ -13,10 +13,8 @@ public:
 	propulsor(const propulsor&);
 	~propulsor();
 	string toString()const;
-	void addPotencia();
-	void deletePotencia(int);
-	void addSerie();
-	void deleteSerie();
+	void propulsor(int,string );
+	void deletePropulsor(int);
 private:
 	int potencia;
 	string serie;

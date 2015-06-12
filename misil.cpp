@@ -26,11 +26,11 @@ Misil::Misil(const misil& other):alcance(other.alcance), radio(other.radio){
 
 Misil::~Misil(){
 	if(lista_misiles){
-		deleter lista_misiles;
+		delete lista_misiles;
 	}
 }
 
-string Misil:toString()const{
+string Misil::toString()const{
 	stringstream ss;
 	ss << "Alcance: " << alcance << " Radio: " << radio;
 	if(lista_misiles->size() != 0){
@@ -43,14 +43,11 @@ string Misil:toString()const{
 	return ss.str();
 }
 
-void addAlcance(alcance){
+void misil::misil(double alcance,double radio){
+	lista_misiles->push_back(misil);
 }
-
-void deleteAlcance(int){
-}
-
-void addRadio(radio){
-
-}
-void deleteRadio(int){
+void misil::deleteMisil(int posicion){
+	if(i==posicion-1){
+		delete lista_misiles[i];
+	}
 }

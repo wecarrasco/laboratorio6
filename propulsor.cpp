@@ -35,13 +35,14 @@ string Propulsores::toString()const{
 	}
 	return ss.str();
 }
-void addPotencia(){
+
+void propulsor::propulsor(int potenncia,string serie){
+	lista_propulsores->push_back(propulsor);
 }
-void deletePotencia(int){
-}
-void addSerie(){
-}
-void deleteSerie(int){
+void propulsor::deletePropulsor(int posicion){
+	if(i==posicion-1){
+		delete lista_propulsores[i];
+	}
 }
 
 bool validarPotencia(int potencia,bool entra){

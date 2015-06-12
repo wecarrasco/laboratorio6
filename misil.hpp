@@ -15,11 +15,8 @@ public:
 	misil(double alcance = 0, double radio = 0);
 	misil(const misil&);
 	string toString()const;
-	void addAlcance()const;
-	void deleteAlcance(int);
-	void AddRadio()const;
-	void deleteRadio(int);
-
+	void misil(double,double );
+	void deleteMisil(int);
 private:
 	//int alcance;
 	//int radio;

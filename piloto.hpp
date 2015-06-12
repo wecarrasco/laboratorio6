@@ -10,9 +10,7 @@ public:
 	piloto(const piloto&);
 	~piloto();
 	string toString()const;
-	void addEdad(int);
-	void addAños_exp(int);
-	void addNombre(string);
+	void piloto(int,int ,string );
 	void deletePiloto(int);
 private:
 	int edad;

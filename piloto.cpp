@@ -41,11 +41,11 @@ string Piloto::toString()const{
 	return ss.str();
 }
 
-void addEdad(int){
+void piloto::piloto(int edad,int _exp,string nombre){
+	lista_piloto->push_back(piloto);
 }
-void addAños_exp(int){
-}
-void addNombre(string){
-}
-void deletePiloto(){
+void piloto::deletePiloto(int posicion){
+	if(i==posicion-1){
+		delete lista_piloto[i];
+	}
 }
