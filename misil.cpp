@@ -1,9 +1,12 @@
-#include "misil.h"
+#include "misil.hpp"
+#include "avion.hpp"
 #include <string>
 #include <sstream>
+#include <vector>
 
 using std :: string;
 using std :: stringstream;
+using std :: vector;
 
 Misil::Misil(double alcance, double radio){
 	if(alcance > 0 && radio > 0 ){
@@ -12,25 +15,42 @@ Misil::Misil(double alcance, double radio){
 	}else{
 		throw("Sus datos no son validos");
 	}
+	lista_miles = new misil<misil>;
 }
 
-void Misil::setAlcance(double alcance){
-	this->alcance = alcance;
+Misil::Misil(const misil& other):alcance(other.alcance), radio(other.radio){
+	lista_misiles = new vector<misiles>(other.lista_misiles->size());
+	for(int i = 0; i<other.grades->size(); i++)
+		(*lista_misiles)[i] = (*other.lista_misiles)[i];
 }
 
-double Misil::getAlcance() const{
-	return this->alcance;
+Misil::~Misil(){
+	if(lista_misiles){
+		deleter lista_misiles;
+	}
 }
 
-void Misil::setRadio(double radio){
-	this->radio = radio;
-}
-
-double Misil:getRadio() const{
-	return this->radio;
-}
-string Misil::toString()const{
+string Misil:toString()const{
 	stringstream ss;
-	ss << alcance <<" metros " << radio << " metros ";
+	ss << "Alcance: " << alcance << " Radio: " << radio;
+	if(lista_misiles->size() != 0){
+		for(int i = 0; i < grades->size()-1; i++){
+			ss << (*lista_misiles)[i] << " ";
+		}
+			ss << (*lista_misiles)[lista_misiles->size()-1];
+	}
+
 	return ss.str();
+}
+
+void addAlcance(alcance){
+}
+
+void deleteAlcance(int){
+}
+
+void addRadio(radio){
+
+}
+void deleteRadio(int){
 }
