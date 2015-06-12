@@ -59,7 +59,7 @@ int main(int argc, char* argv[]){
 
 				if (entra1  &&  entra2  &&  entra3)
 				{
-					listaAviones.push_back(listaPro[listaPro.size()], listaMisiles[listaMisiles.size()], listaPilotos[listaPilotos.size()]);
+					listaAviones.push_back(avion(listaPro[listaPro.size()], listaMisiles[listaMisiles.size()], listaPilotos[listaPilotos.size()]));
 					listaPro.pop_back();
 					listaPilotos.pop_back();
 					listaMisiles.pop_back();
@@ -87,13 +87,15 @@ int main(int argc, char* argv[]){
 				cin >> edad;
 				cout << endl;
 				cout << "Ingrese experiencia: ";
-				cin << _exp;
+				cin >> _exp;
 				cout << endl;
 				listaPilotos.push_back(piloto(edad, _exp, nombre));
 			}else{
 				bool entra;
+				int potencia;
+				string serie;
 				do{
-					int potencia;
+					
 					cout << "Ingrese potencia: " << endl;
 					cin >> potencia;
 					if (potencia > 29 && potencia < 51)
@@ -105,7 +107,11 @@ int main(int argc, char* argv[]){
 					}
 				}while(entra == false);
 
-				listaPro.push_back(propulsor(potencia));
+				cout << "Ingrese Serie: "<<endl;
+				cin >> serie;
+
+
+				listaPro.push_back(propulsor(potencia, serie));
 			}
 		}
 		if(opcion == 2){
@@ -120,49 +126,57 @@ int main(int argc, char* argv[]){
 				cout <<"-------------AVIONES------------"<<endl;
 				for (int i = 0; i < listaAviones.size(); i++)
 				{
-					cout << (i+1) << listaAviones[i].toString() << endl;
+					avion a = listaAviones[i];
+					cout << (i+1) << a.toString() << endl;
 				}
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaAviones.erase(opc - 1);
+				opc--;
+				listaAviones.erase(listaAviones.begin(), listaAviones.begin()+opc);
 			}else if (opcion2 == 2)
 			{
 				cout <<"-------------MISILES------------"<<endl;
 				for (int i = 0; i < listaMisiles.size(); i++)
 				{
-					cout << (i+1) << listaMisiles[i].toString() << endl;
+					misil a = listaMisiles[i];
+					cout << (i+1) << a.toString() << endl;
 				}
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaMisiles.erase(opc - 1);
+				opc--;
+				listaMisiles.erase(listaMisiles.begin(), listaMisiles.begin()+opc);
 			}else if (opcion2 == 3)
 			{
 				cout <<"-------------PILOTOS------------"<<endl;
 				for (int i = 0; i < listaPilotos.size(); i++)
 				{
-					cout << (i+1) << listaPilotos[i].toString() << endl;
+					piloto a = listaPilotos[i];
+					cout << (i+1) << a.toString() << endl;
 				}
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaPilotos.erase(opc - 1);
+				opc--;
+				listaPilotos.erase(listaPilotos.begin(), listaPilotos.begin()+opc);
 			}else {
 				cout <<"-------------PROPULSORES------------"<<endl;
 				for (int i = 0; i < listaPro.size(); i++)
 				{
-					cout << (i+1) << listaPro[i].toString() << endl;
+					propulsor a = listaPro[i];
+					cout << (i+1) << a.toString() << endl;
 				}
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaPro.erase(opc - 1);
+				opc--;
+				listaPro.erase(listaPro.begin(),listaPro.begin()+opc);
 			}
 		}
 		if(opcion == 3){
 			for(int i = 0; i < 	listaAviones.size(); i++){
-				cout << listaAviones[i].toString << endl;
+				//cout << listaAviones[i].toString << endl;
 			}
 		}
 	}

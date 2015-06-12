@@ -12,10 +12,10 @@ class misil{
 public:
 	//misil(int alcance,int radio);
 	//misil crearMisil(int alcance,int radio);
-	misil(double alcance = 0, double radio = 0);
+	misil(double alcance = 0.0, double radio = 0.0);
 	misil(const misil&);
 	string toString()const;
-	void misil(double,double );
+	//void misil(double, double);
 	void deleteMisil(int);
 private:
 	//int alcance;
