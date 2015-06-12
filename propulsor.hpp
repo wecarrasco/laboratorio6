@@ -13,7 +13,7 @@ public:
 	propulsor(const propulsor&);
 	~propulsor();
 	string toString()const;
-	void propulsor(int,string );
+	//void propulsor(int, string);
 	void deletePropulsor(int);
 private:
 	int potencia;

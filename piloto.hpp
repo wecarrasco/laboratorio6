@@ -10,7 +10,7 @@ public:
 	piloto(const piloto&);
 	~piloto();
 	string toString()const;
-	void piloto(int, int, string);
+	//void piloto(int, int, string);
 	void deletePiloto(int);
 private:
 	int edad;

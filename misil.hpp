@@ -22,7 +22,6 @@ private:
 	//int radio;
 	double alcance, radio;
 	vector<misil>  lista_misiles;
-	misil(const misil&);
 };
 
 #endif
