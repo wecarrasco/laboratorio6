@@ -6,17 +6,18 @@
 
 //Include
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
 
-int main(int argc, char * argv){
+int main(int argc, char* argv[]){
 	vector <avion> listaAviones;
 	vector <misil> listaMisiles;
 	vector <piloto> listaPilotos;
 	vector <propulsor> listaPro;
 
-	int opcion;
+	int opcion=0;
 
 	while(true){
 		cout<<"Argye Wings Inc."<<endl;
@@ -30,7 +31,7 @@ int main(int argc, char * argv){
 			cout << "2. Agregar Misil" << endl;
 			cout << "3. Agregar Piloto" << endl;
 			cout << "4. Agregar Propulsor" << endl;
-			int opcion1;
+			int opcion1=0;
 			cin >> opcion1;
 			if (opcion1 == 1)
 			{
@@ -58,7 +59,7 @@ int main(int argc, char * argv){
 
 				if (entra1  &&  entra2  &&  entra3)
 				{
-					listaAviones.push_back(listaPro[listaPro.size()], listaMisiles[listaMisiles.size()], listaPilotos[listaPilotos.size()]);
+					//listaAviones.push_back(listaPro[listaPro.size()], listaMisiles[listaMisiles.size()], listaPilotos[listaPilotos.size()]);
 					listaPro.pop_back();
 					listaPilotos.pop_back();
 					listaMisiles.pop_back();
@@ -86,7 +87,7 @@ int main(int argc, char * argv){
 				cin >> edad;
 				cout << endl;
 				cout << "Ingrese experiencia: ";
-				cin << _exp;
+				//cin << _exp;
 				cout << endl;
 				listaPilotos.push_back(piloto(edad, _exp, nombre));
 			}else{
@@ -102,9 +103,9 @@ int main(int argc, char * argv){
 						entra = false;
 						cout<< "Ingrese valor entre 30 - 50"<< endl;
 					}
-				}while(entra == false)
+				}while(entra == false);
 
-				listaPro.push_back(propulsor(potencia));
+				//listaPro.push_back(propulsor(potencia));
 			}
 		}
 		if(opcion == 2){
@@ -124,7 +125,7 @@ int main(int argc, char * argv){
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaAviones.erase(opc - 1);
+				//listaAviones.erase(opc - 1);
 			}else if (opcion2 == 2)
 			{
 				cout <<"-------------MISILES------------"<<endl;
@@ -135,7 +136,7 @@ int main(int argc, char * argv){
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaMisiles.erase(opc - 1);
+				//listaMisiles.erase(opc - 1);
 			}else if (opcion2 == 3)
 			{
 				cout <<"-------------PILOTOS------------"<<endl;
@@ -146,7 +147,7 @@ int main(int argc, char * argv){
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaPilotos.erase(opc - 1);
+				//listaPilotos.erase(opc - 1);
 			}else {
 				cout <<"-------------PROPULSORES------------"<<endl;
 				for (int i = 0; i < listaPro.size(); i++)
@@ -156,12 +157,12 @@ int main(int argc, char * argv){
 				int opc;
 				cout << "Cual desea eliminar? "<< endl;
 				cin >> opc;
-				listaPro.erase(opc - 1);
+				//listaPro.erase(opc - 1);
 			}
 		}
 		if(opcion == 3){
 			for(int i = 0; i < 	listaAviones.size(); i++){
-				cout << listaAviones[i].toString << endl;
+				//cout << listaAviones[i].toString << endl;
 			}
 		}
 	}
