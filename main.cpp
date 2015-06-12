@@ -158,8 +158,10 @@ int main(int argc, char * argv){
 			}
 		}
 		if(opcion == 3){
-			for(int i = 0; i < 
+			for(int i = 0; i < 	listaAviones.size(); i++){
+				cout << listaAviones[i].toString << endl;
+			}
 		}
 	}
+	return 0;
 }
-
