@@ -1,6 +1,8 @@
 #include "piloto.hpp"
+#include "avion.hpp"
 #include <string>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -12,34 +14,38 @@ Piloto::piloto(int edad,int _exp,string nombre){
 	}else{
 		throw("Sus datos con incorrectos");
 	}
+	piloto = new vector<piloto>
 }
 
-piloto crearPiloto(int edad,int _exp,string nombre){
-	piloto retval;
-	retval= new piloto(edad,_exp,nombre);
-	return retval; 
+Piloto::piloto(const piloto& other):edad(other.edad), _exp(other._exp), nombre(other.nombre){
+	piloto = new vector<piloto>(other.lista_piloto->size());
+	for(int i=0; i<other.lista_piloto->size(); i++){
+		(*lista_piloto)[i] = (*other.lista_piloto)[i];
+	}
 }
 
-void Piloto::setEdad(int edad){
-	this->edad = edad;
+Piloto::~piloto(){
+	if(lista_piloto)
+		delete lista_piloto;
 }
-int Piloto::getEdad()const{
-	return this->edad;
-}
-void Piloto::set_exp(int _exp){
-	this->_exp = _exp;
-}
-int Piloto::get_exp()const{
-	return this->_exp;
-}
-void Piloto::setNombre(string nombre){
-	this->nombre = nombre;
-}
-string Piloto::getNombre(){
-	retunr this->nombre;
-}
+
 string Piloto::toString()const{
 	stringstream ss;
-	ss << "Nombre: " << nombre << " Edad: " << edad << " Años de expeiencia: "<< _exp;
+	ss << "Edad: " << edad << " Años de Experiencia: " << _exp << " Nombre: "<<nombre;
+	if(lista_piloto->size() != 0){	
+		for(int i = 0; i < lista_piloto->size()-1; i++){
+			ss<< (*lista_piloto)[i] << " ";
+		}
+		ss << (*lista_piloto)[lista_piloto->size()-1];
+	}
 	return ss.str();
+}
+
+void addEdad(int){
+}
+void addAños_exp(int){
+}
+void addNombre(string){
+}
+void deletePiloto(){
 }
