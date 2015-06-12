@@ -2,6 +2,7 @@
 #include "avion.hpp"
 #include "misil.hpp"
 #include "piloto.hpp"
+#include "propulsor.hpp"
 
 //Include
 #include <iostream>
